@@ -7,6 +7,7 @@ defmodule DaisyUIForms.MixProject do
       version: "0.1.0",
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
+      aliases: aliases(),
       deps: deps()
     ]
   end
@@ -22,6 +23,12 @@ defmodule DaisyUIForms.MixProject do
   defp deps do
     [
       {:phoenix_html, "~> 3.0"}
+    ]
+  end
+
+  defp aliases do
+    [
+      ci: ["format --check-formatted", "test"]
     ]
   end
 end
