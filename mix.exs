@@ -5,7 +5,7 @@ defmodule DaisyUIForms.MixProject do
     [
       app: :daisyui_forms,
       version: "0.1.0",
-      elixir: "~> 1.14",
+      elixir: "~> 1.11",
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps()
