@@ -116,6 +116,10 @@ defmodule DaisyUIForms do
         else
           storage = Keyword.get(opts, :storage)
 
+          unless Code.ensure_loaded?(storage) do
+            raise "Defined storage for DaisyUIForms.file_input/4 is invalid"
+          end
+
           {:ok, url} = storage.get_signed_url(value)
 
           content_tag :a, href: url do
