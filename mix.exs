@@ -4,7 +4,7 @@ defmodule DaisyUIForms.MixProject do
   def project do
     [
       app: :daisyui_forms,
-      version: "0.0.1",
+      version: "0.0.2",
       elixir: "~> 1.11",
       description: "Helper module to generate form elements with DaisyUI",
       package: package(),
