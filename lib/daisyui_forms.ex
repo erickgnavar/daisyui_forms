@@ -141,7 +141,23 @@ defmodule DaisyUIForms do
     end)
   end
 
-  def translate_error({_msg, _opts}) do
-    # TODO: imeplement a behaviour to use translation using gettext
+  @error_message """
+  Missing gettext_module config. Add the following to your config/config.exe
+
+  config :daisyui_forms, gettext_module: YourApp.Gettext
+  """
+
+  defp translate_error({msg, opts}) do
+    module = Application.get_env(:daisyui_forms, :gettext_module)
+
+    unless Code.ensure_loaded?(module) do
+      raise ArgumentError, message: @error_message
+    end
+
+    if count = opts[:count] do
+      Gettext.dngettext(module, "errors", msg, msg, count, opts)
+    else
+      Gettext.dgettext(module, "errors", msg, opts)
+    end
   end
 end
