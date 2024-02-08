@@ -141,7 +141,7 @@ defmodule DaisyUIForms do
     end)
   end
 
-  def translate_error({msg, _opts}) do
+  def translate_error({_msg, _opts}) do
     # TODO: imeplement a behaviour to use translation using gettext
   end
 end
