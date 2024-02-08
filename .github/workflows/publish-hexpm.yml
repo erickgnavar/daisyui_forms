@@ -24,4 +24,4 @@ jobs:
       - name: publish to hex.pm
         run: mix hex.publish --yes
         env:
-          HEX_API_KEY: ${{ secrets.HEX_KEY_PUBLISH }}
+          HEX_API_KEY: ${{ secrets.HEX_API_KEY }}
